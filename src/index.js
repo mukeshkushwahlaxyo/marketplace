@@ -5,6 +5,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-awesome-slider/dist/styles.css';
 import { BrowserRouter } from 'react-router-dom';
+import 'antd/dist/antd.css';
 
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux'
