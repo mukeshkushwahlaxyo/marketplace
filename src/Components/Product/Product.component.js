@@ -29,9 +29,9 @@ import  axios from 'axios';
 						<div className="item-wrap">
 							<div className="item-detail">
 								<div className="item-img products-thumb">
-									<a href="https://demo.wpthemego.com/themes/sw_flashmart/product/orbi-vehicula-sagittis/" title="Metallic Rose Swan Bag Orbi Vehicula Sagittis" tabindex="-1"> 
-									<img src={API_URL+products.pro_images[0].doc_path}  className="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Metallic Rose Swan Bag Orbi Vehicula Sagittis" loading="lazy" sizes="(max-width: 300px) 100vw, 300px" width="300" height="300" /> </a>
-									<div className="sale-off2">50%<span> off</span></div>
+									<button onClick={ ()=>{props.showProduct({pice:1000,name:'i phone 11'})}}> 
+									<img  src={API_URL+products.pro_images[0].doc_path}  className="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Metallic Rose Swan Bag Orbi Vehicula Sagittis" loading="lazy" sizes="(max-width: 300px) 100vw, 300px" width="300" height="300" /> </button>
+										<div className="sale-off2">50%<span> off</span></div>
 									
 								</div>
 								<div className="item-content">
@@ -65,7 +65,7 @@ import  axios from 'axios';
 
 
 
-			   
+
 					<div className="item item-countdown product product-images slick-slide slick-cloned" id="" data-slick-index="-5" aria-hidden="true" style={{width: '245px'}} tabindex="-1">
 						<div className="item-wrap">
 							<div className="item-detail">
