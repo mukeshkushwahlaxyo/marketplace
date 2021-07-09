@@ -6,20 +6,27 @@ import {
   Link,
   useHistory
 } from "react-router-dom";
+import {Nav,Navbar,NavDropdown} from 'react-bootstrap';
 
+import { Modal, Button } from 'antd';
 
-import {Button ,Modal,Nav,Navbar,NavDropdown} from 'react-bootstrap'
-function SingupLoinAndWishList() {
-    const history = useHistory();
-    const token = sessionStorage.getItem('token')
-    const name = JSON.parse(sessionStorage.getItem('user'))
+class SingupLoinAndWishList extends Component {
 
-    function logOut(){
+    constructor(props) {
+        super(props);
 
-    sessionStorage.clear()
-     history.push('/login');
+        this.state = {
+            isopen : false
+        };
 
- }
+        this.handleClickOpen.bind(this);
+    }
+
+    handleClickOpen(){
+        this.setState({isopen:!this.state.isopen})
+    }
+
+    render(){
     
         return(
             <>
@@ -48,8 +55,8 @@ function SingupLoinAndWishList() {
                         
                         <div class="top-login3" >
                              <Nav>
-                                <NavDropdown title={name ? name.name : ''} style={{textColor:'white'}}>
-                                    <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
+                                <NavDropdown title='ds' style={{textColor:'white'}}>
+                                    <NavDropdown.Item >Logout</NavDropdown.Item>
                                     <NavDropdown.Item >Profile</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
@@ -59,7 +66,7 @@ function SingupLoinAndWishList() {
                          <div class="top-login3">
                             <ul>
                                 <li>
-                                    <Link to="/login">Sing In</Link>/
+                                    <Link to="/login" onClick={(()=>this.setOpen())}>Sing In</Link>/
                                     <Link to="/register">Sing Up</Link>
                                 </li>
                                 
@@ -70,9 +77,15 @@ function SingupLoinAndWishList() {
                     </div>
                 </div>
                  
+                  <Modal title="Basic Modal" visible={true} onCancel={this.handleClickOpen}>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                  </Modal>
                
             </>
         )
+    }
 }
 
 export default SingupLoinAndWishList;
